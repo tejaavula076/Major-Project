@@ -61,7 +61,7 @@ module.exports.addListing = async (req, res, next) => {
   add.image = { url, filename };
   add.geometry = response.body.features[0].geometry;
   await add.save();
-  console.log(add);
+//   console.log(add);
   req.flash("success", "New Listing Created");
   res.redirect("/listings");
 };

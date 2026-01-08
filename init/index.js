@@ -40,7 +40,7 @@ const initdata = require("./data.js");
 const Listing = require("../models/listing.js");
 
 const dbUrl = process.env.ATLASDB_URL;   // MUST be before main()
-console.log(dbUrl)
+// console.log(dbUrl)
 const CATEGORIES = [
     "Trending",
     "Rooms",

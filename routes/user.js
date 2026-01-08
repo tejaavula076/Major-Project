@@ -20,10 +20,10 @@ router.route("/login").get(userController.getLogin);
 router.post(
   "/login",
   async (req, res, next) => {
-    console.log("inpost route", req.body.username);
-    console.log(User);
+    // console.log("inpost route", req.body.username);
+    // console.log(User);
     const user = await User.findOne({ username: req.body.username });
-    console.log("LOGIN user exists?", !!user, "username:", req.body.username);
+ //   console.log("LOGIN user exists?", !!user, "username:", req.body.username);
     next();
   },
   saveRedirectUrl,

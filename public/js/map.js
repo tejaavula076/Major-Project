@@ -8,7 +8,7 @@ const map = new mapboxgl.Map({
     center: coordinates, // starting position [lng, lat]. Note that lat must be set between -90 and 90
     zoom: 9 // starting zoom
 });
-console.log(coordinates)
+// console.log(coordinates)
 const homeEl = document.createElement("div");
 homeEl.innerHTML = `
 <i class="fa-solid fa-house"></i>
@@ -17,7 +17,7 @@ homeEl.style.fontSize = "20px";
 homeEl.style.color = "red"
 homeEl.style.borderRadius = "50%"
 homeEl.style.cursor = "pointer"
-console.log(location)
+// console.log(location)
 const marker1 = new mapboxgl.Marker(homeEl)
     .setLngLat(coordinates)
     .addTo(map);
@@ -28,4 +28,4 @@ const popup = new mapboxgl.Popup({ offset: 25 })
 
 marker1.setPopup(popup);
 
-console.log("iam the marker", marker1)
+// console.log("iam the marker", marker1)
