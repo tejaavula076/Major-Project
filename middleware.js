@@ -4,7 +4,7 @@ const { listingSchema } = require("./schema.js");
 const ExpressError = require("./utils/ExpressError.js")
 const { reviewSchema } = require("./schema.js");
 module.exports.isLoggedin = (req, res, next) => {
-    console.log(req.user)
+    // console.log("iam checking user",req.user)
     if (!req.isAuthenticated()) {
         //redirect to correct url
         req.session.redirectUrl = req.originalUrl;
@@ -16,6 +16,7 @@ module.exports.isLoggedin = (req, res, next) => {
 //this method will work for redirecting because passport used to start the session newly everytime it is created 
 //so that is the reason u writeseparatelt
 module.exports.saveRedirectUrl = (req, res, next) => {
+    // console.log("i am in redirect irl", req.session.redirectUrl)
     if (req.session.redirectUrl) {
         res.locals.redirectUrl = req.session.redirectUrl;
     }

@@ -12,6 +12,7 @@ let port = 3031;
 const ejsMate = require("ejs-mate")
 app.engine('ejs', ejsMate);
 app.listen(port, (req, res) => {
+    // res.send("I am in the app")
     console.log("App is listening to server")
 })
 
@@ -43,7 +44,7 @@ const store = MongoStore.create({
    },
    touchAfter:24*3600
 })
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("Error in Mongo Session Store",err)
 })
 let sessionOptions = {
@@ -70,6 +71,7 @@ app.use((req, res, next) => {
     res.locals.success = req.flash("success");
     res.locals.error = req.flash("error");
     res.locals.currUser = req.user
+  //  console.log(currUser)
     next()
 })
 

@@ -30,6 +30,7 @@ module.exports.getLogin = (req, res) => {
 }
 //postlogin 
 module.exports.renderlogin = async (req, res) => {
+    console.log("in controller",res.locals.redirectUrl )
     req.flash("success", "Welcome back!");
     let redirectUrl = res.locals.redirectUrl || "/listings"
     res.redirect(redirectUrl);
